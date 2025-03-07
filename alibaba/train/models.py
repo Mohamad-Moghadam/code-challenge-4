@@ -1,5 +1,5 @@
 from django.db import models
-
+from aeroplane.models import Reservations
 
 
 class Customer(models.Model):
@@ -10,12 +10,17 @@ class Customer(models.Model):
     payment = models.BooleanField(default=False)
     
 class Tarin(models.Model):
+    
+    
     name = models.CharField(max_length=20)
     entrance_date = models.DateTimeField(auto_now_add=True)
-    capacity = models.IntegerField()
+    capacity = models.PositiveIntegerField()
+    rate = models.CharField(max_length=10)
+    code = models.CharField(max_length=10,unique=True)
+    carrage =models.CharField(max_length=10)
     
 
-class Reservation():
-    pass
+
+
 
 
