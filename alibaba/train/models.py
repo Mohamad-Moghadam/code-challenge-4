@@ -8,11 +8,14 @@ class Customer(models.Model):
     national_id = models.CharField(max_length=11, unique=True)
     email = models.EmailField(null=True , blank=True)
     payment = models.BooleanField(default=False)
-class Tarin():
+    
+class Tarin(models.Model):
     name = models.CharField(max_length=20)
+    entrance_date = models.DateTimeField(auto_now_add=True)
+    capacity = models.IntegerField()
     
 
 class Reservation():
     pass
 
-class 
+
