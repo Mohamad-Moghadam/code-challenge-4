@@ -12,7 +12,7 @@ class Customer(models.Model):
 class Tarin(models.Model):
     name = models.CharField(max_length=20)
     entrance_date = models.DateTimeField(auto_now_add=True)
-    capacity = models.IntegerField()
+    capacity = models.PositiveIntegerField()
     
 
 class Reservation():
