@@ -1,5 +1,5 @@
 from django.db import models
-from train.models import Customer
+from train.models import Customer, Train
 
 
 
@@ -17,4 +17,6 @@ class Flights(models.Model):
     seat = models.IntegerField()
 
 class Reservations(models.Model):
-    aeroplane_ticket = models.ForeignKey(to = Flights)
+    aeroplane_ticket = models.ForeignKey(to = Flights, on_delete = Flights, "aeroplane")
+    train_ticket = models.ForeignKey(to = Train, on_delete = Train, "train_ticket")
+    bus_ticket = models.ForeignKey(to = Bus, on_delete = Bus, "bus_ticket")
