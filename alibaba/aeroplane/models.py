@@ -17,7 +17,7 @@ class Flights(models.Model):
     seat = models.IntegerField()
 
 class Reservations(models.Model):
-    aeroplane_ticket = models.ForeignKey(to = Flights, on_delete = models.CASCADE, "aeroplane")
-    train_ticket = models.ForeignKey(to = Train, on_delete = models.CASCADE, "train_ticket")
-    bus_ticket = models.ForeignKey(to = Bus, on_delete = models.CASCADE, "bus_ticket")
+    aeroplane_ticket = models.ForeignKey(to = Flights, on_delete = models.CASCADE,related_name =  "aeroplane")
+    train_ticket = models.ForeignKey(to = Train, on_delete = models.CASCADE,related_name = "train_ticket")
+    bus_ticket = models.ForeignKey(to = Bus, on_delete = models.CASCADE,related_name = "bus_ticket")
 
